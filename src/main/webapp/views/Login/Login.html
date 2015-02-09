@@ -1,0 +1,45 @@
+<div class="header">
+  <h1>Login</h1>
+</div>
+
+<div class="purg-g">
+  <div class="pure-u-1-3" style="display: block; margin: 0 auto;">
+
+    <form class="pure-form pure-form-aligned">
+      <fieldset>
+
+        <div class="pure-control-group">
+          <div class="error">{{error}}</div>
+        </div>
+
+        <div class="pure-control-group">
+          <label>Username</label>
+          <input type="text" ng-model="user.username"/>
+        </div>
+
+        <div class="pure-control-group">
+          <label>Password</label>
+          <input type="password" ng-model="user.password"/>
+        </div>
+
+        <div class="pure-controls">
+
+          <label class="pure-checkbox">
+            <input type="checkbox" ng-model="rememberMe"> Remember me
+          </label>
+
+          <button type="submit" class="pure-button pure-button-primary" ng-click="login()">
+            <i class="fa fa-user"></i>
+            Login
+          </button>
+          or
+          <a href ui-sref="Signup">
+            <i class="fa fa-pencil"></i>
+            Sign up
+          </a>
+        </div>
+      </fieldset>
+    </form>
+
+  </div>
+</div>

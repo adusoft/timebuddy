@@ -1,0 +1,56 @@
+<div class="header">
+  <h1>Sign up</h1>
+</div>
+
+<div class="purg-g">
+  <div class="pure-u-1-3" style="display: block; margin: 0 auto;">
+
+    <form class="pure-form pure-form-aligned" name="signUpForm">
+      <fieldset>
+
+        <div class="pure-control-group">
+          <div class="error">{{error}}</div>
+        </div>
+
+        <div class="pure-control-group">
+          <label>First Name *</label>
+          <input type="text" ng-model="user.firstName" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label>Last Name *</label>
+          <input type="text" ng-model="user.lastName" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label>Username *</label>
+          <input type="text" ng-model="user.username" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label>Password *</label>
+          <input type="password" ng-model="user.password1" required/>
+        </div>
+
+        <div class="pure-control-group">
+          <label>Repeat Password *</label>
+          <input type="password" ng-model="user.password2" required/>
+        </div>
+
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary"
+                  ng-disabled="!signUpForm.$valid" ng-click="signup(); signUpForm.$setPristine();">
+            <i class="fa fa-pencil"></i>
+            Sign up
+          </button>
+          or
+          <a href ui-sref="Login">
+            <i class="fa fa-user"></i>
+            Login
+          </a>
+        </div>
+      </fieldset>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<div class="header">
+  <h1>Time Entries</h1>
+</div>
+
+<div class="content">
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <button class="pure-button pure-button-primary" style="float: left;" ng-click="edit({})" ng-disabled="editMode">
+        <i class="fa fa-plus"></i>
+        Add
+      </button>
+      <form class="pure-form" style="float: right;">
+        <input type="text" ng-model="search.name" placeholder="Search by name">
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Time Entry -->
+  <form class="pure-form pure-form-aligned" style="margin-top: 30px" ng-show="editMode">
+    <legend>Create/Edit Time Entry</legend>
+
+    <fieldset>
+
+      <div class="pure-control-group">
+        <label>Name</label>
+        <input type="text" ng-model="timeEntry.name"/>
+      </div>
+
+      <div class="pure-control-group">
+        <label>City</label>
+        <input type="text" ng-model="timeEntry.city"/>
+      </div>
+
+      <div class="pure-control-group">
+        <label>GMT difference</label>
+        <select ng-model="timezoneOptions.sign">
+          <option>+</option>
+          <option>-</option>
+        </select>
+        <select ng-model="timezoneOptions.hour">
+          <option ng-repeat="hour in timezoneOptions.hours">{{hour}}</option>
+        </select>
+        <select ng-model="timezoneOptions.minute">
+          <option ng-repeat="minute in timezoneOptions.minutes">{{minute}}</option>
+        </select>
+      </div>
+
+      <div class="pure-controls">
+        <button type="submit" class="pure-button pure-button-primary" ng-click="save()">
+          <i class="fa fa-save"></i>
+          Save
+        </button>
+        <button type="submit" class="pure-button" ng-click="cancel()">
+          <i class="fa fa-ban"></i>
+          Cancel
+        </button>
+      </div>
+
+    </fieldset>
+  </form>
+
+</div>
+
+<div class="content">
+
+  <div class="clock" ng-repeat="timeEntry in timeEntries | filter:search" ng-click="edit(timeEntry)">
+    <div class="name">{{timeEntry.name}}</div>
+    <div class="city">{{timeEntry.city}}</div>
+    <div class="timezone">GMT{{timeEntry.timezone}}</div>
+    <div class="time">{{timeEntry.time}}</div>
+  </div>
+
+</div>

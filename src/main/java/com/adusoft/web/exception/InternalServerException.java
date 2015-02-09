@@ -1,0 +1,9 @@
+package com.adusoft.web.exception;
+
+public class InternalServerException extends RuntimeException {
+
+  public InternalServerException(String message) {
+    super(message);
+  }
+
+}

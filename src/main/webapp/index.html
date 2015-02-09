@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time Buddy</title>
+
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/pure-min.css">
+  <link rel="stylesheet" href="css/timebuddy.css">
+
+</head>
+<body ng-app="timebuddy" ng-controller="ViewCtrl">
+
+<spinner></spinner>
+
+<div class="pure-menu pure-menu-open pure-menu-horizontal">
+  <a href="#" class="pure-menu-heading" ui-sref="TimeEntries">Time Buddy</a>
+
+  <ul style="float: right;">
+    <li ng-if="!isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ui-sref="Login">Login</a></li>
+    <li ng-if="isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ng-click="logout()">Logout ({{loggedUser.username}})</a></li>
+  </ul>
+</div>
+
+<div>
+
+  <div ui-view></div>
+
+</div>
+
+<script src="js/libs/jquery-2.1.1.min.js"></script>
+<script src="js/libs/angular.min.js"></script>
+<script src="js/libs/angular-ui-router.min.js"></script>
+<script src="js/libs/ngStorage.min.js"></script>
+<script src="js/libs/angular-permission.js"></script>
+
+<script src="js/libs/moment.min.js"></script>
+
+<script src="dist/index.js"></script>
+
+</body>
+</html>
