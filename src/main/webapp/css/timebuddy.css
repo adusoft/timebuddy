@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   font-family: "omnes-pro", sans-serif;
   max-width: 768px;
@@ -31,6 +36,7 @@
 }
 
 .content {
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
@@ -44,14 +50,12 @@ ul.menu-heading-right {
 }
 
 div.clock {
-  float: left;
   box-sizing: border-box;
   background-color: black;
   color: #51f30c;
   border: 3px solid green;
   padding: 10px;
   margin: 5px;
-  width: 350px;
   cursor: pointer;
 }
 
@@ -95,4 +99,33 @@ div.success {
 .pure-button-error {
   background-color: rgb(202, 60, 60);
   color: white;
+}
+
+@media only screen
+and (min-device-width: 480px) {
+  div.clock {
+    float: left;
+    width: 350px;
+    cursor: pointer;
+  }
+}
+
+@media only screen
+and (max-device-width: 480px) {
+  body {
+    font-size: 1.8em;
+    width: 80%;
+  }
+
+  .content {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  div.clock {
+    width: 100%;
+  }
+
 }
