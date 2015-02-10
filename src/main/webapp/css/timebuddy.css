@@ -91,3 +91,8 @@ div.success {
   margin: 0 auto;
   font-weight: bold;
 }
+
+.pure-button-error {
+  background-color: rgb(202, 60, 60);
+  color: white;
+}

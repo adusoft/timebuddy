@@ -50,6 +50,10 @@
           <i class="fa fa-save"></i>
           Save
         </button>
+        <button type="submit" class="pure-button pure-button-error" ng-click="delete()" ng-if="timeEntry.id">
+          <i class="fa fa-trash"></i>
+          Delete
+        </button>
         <button type="submit" class="pure-button" ng-click="cancel()">
           <i class="fa fa-ban"></i>
           Cancel

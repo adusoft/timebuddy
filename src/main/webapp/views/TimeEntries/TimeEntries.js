@@ -60,8 +60,8 @@ module.exports = function ($scope, $interval, TimeEntriesService) {
     $scope.editMode = false;
   };
 
-  $scope.delete = function (timeEntry) {
-    TimeEntriesService.delete(timeEntry.id).then(refresh);
+  $scope.delete = function () {
+    TimeEntriesService.delete($scope.timeEntry.id).then(refresh);
     $scope.timeEntry = {};
     $scope.editMode = false;
   };
