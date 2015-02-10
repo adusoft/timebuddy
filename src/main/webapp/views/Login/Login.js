@@ -8,7 +8,7 @@ var LoginCtrl = function ($scope, $stateParams, AuthService, $state) {
   };
 
   $scope.login = function () {
-    var promise = AuthService.login($scope.user, $scope.rememberMe);
+    var promise = AuthService.login($scope.user);
     promise.then(function () {
       $state.go('TimeEntries');
     }, function (response) {

@@ -38,6 +38,11 @@
   max-width: 95%;
 }
 
+ul.menu-heading-right {
+  float: right;
+  padding: 10px 15px 5px 0;
+}
+
 div.clock {
   float: left;
   box-sizing: border-box;
@@ -77,4 +82,12 @@ div.clock .time {
   font-family: "Digital-7 Mono", monospace;
   font-size: 4em;
   text-align: center;
+}
+
+div.success {
+  color: forestgreen;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
 }

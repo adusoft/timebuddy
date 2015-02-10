@@ -1,6 +1,6 @@
-module.exports = function ($scope, $state, AuthService, loggedUser) {
+module.exports = function ($scope, $state, AuthService, $localStorage) {
 
-  $scope.loggedUser = loggedUser;
+  $scope.username = $localStorage.username;
 
   $scope.logout = function () {
     AuthService.logout();

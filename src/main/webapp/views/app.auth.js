@@ -2,16 +2,12 @@
 
 var app = require('./app');
 
-app.value('loggedUser', {
-  username: ''
-});
-
 app.config(['$httpProvider', function ($httpProvider) {
-  $httpProvider.interceptors.push(function ($q, $location, loggedUser) {
+  $httpProvider.interceptors.push(function ($q, $location, $localStorage) {
     return {
 
       request: function (config) {
-        config.headers.authToken = loggedUser.authToken;
+        config.headers.authToken = $localStorage.authToken;
         return config;
       },
 

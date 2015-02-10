@@ -14,11 +14,14 @@
 <spinner></spinner>
 
 <div class="pure-menu pure-menu-open pure-menu-horizontal">
-  <a href="#" class="pure-menu-heading" ui-sref="TimeEntries">Time Buddy</a>
+  <a href="#" class="pure-menu-heading" ui-sref="TimeEntries">
+    <h1>Time Buddy</h1>
+  </a>
 
-  <ul style="float: right;">
+  <ul class="menu-heading-right">
     <li ng-if="!isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ui-sref="Login">Login</a></li>
-    <li ng-if="isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ng-click="logout()">Logout ({{loggedUser.username}})</a></li>
+    <li ng-if="isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ng-click="logout()">Logout ({{username}})</a></li>
+    <li ng-if="!isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ui-sref="Signup">Sign Up</a></li>
   </ul>
 </div>
 
