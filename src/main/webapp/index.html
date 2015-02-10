@@ -20,7 +20,7 @@
 
   <ul class="menu-heading-right">
     <li ng-if="!isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ui-sref="Login">Login</a></li>
-    <li ng-if="isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ng-click="logout()">Logout ({{username}})</a></li>
+    <li ng-if="isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ng-click="logout()">Logout ({{username()}})</a></li>
     <li ng-if="!isUserLoggedIn()" ui-sref-active="pure-menu-selected"><a href ui-sref="Signup">Sign Up</a></li>
   </ul>
 </div>

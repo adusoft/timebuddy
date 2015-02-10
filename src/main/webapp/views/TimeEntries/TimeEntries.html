@@ -16,41 +16,42 @@
   </div>
 
   <!-- Add Time Entry -->
-  <form class="pure-form pure-form-aligned" style="margin-top: 30px" ng-show="editMode">
+  <form class="pure-form pure-form-aligned" name="timeEntryForm" style="margin-top: 30px" ng-show="editMode">
     <legend>Create/Edit Time Entry</legend>
 
     <fieldset>
 
       <div class="pure-control-group">
         <label>Name</label>
-        <input type="text" ng-model="timeEntry.name"/>
+        <input type="text" ng-model="timeEntry.name" required/>
       </div>
 
       <div class="pure-control-group">
         <label>City</label>
-        <input type="text" ng-model="timeEntry.city"/>
+        <input type="text" ng-model="timeEntry.city" required/>
       </div>
 
       <div class="pure-control-group">
         <label>GMT difference</label>
-        <select ng-model="timezoneOptions.sign">
+        <select ng-model="timezoneOptions.sign" required>
           <option>+</option>
           <option>-</option>
         </select>
-        <select ng-model="timezoneOptions.hour">
+        <select ng-model="timezoneOptions.hour" required>
           <option ng-repeat="hour in timezoneOptions.hours">{{hour}}</option>
         </select>
-        <select ng-model="timezoneOptions.minute">
+        <select ng-model="timezoneOptions.minute" required>
           <option ng-repeat="minute in timezoneOptions.minutes">{{minute}}</option>
         </select>
       </div>
 
       <div class="pure-controls">
-        <button type="submit" class="pure-button pure-button-primary" ng-click="save()">
+        <button type="submit" class="pure-button pure-button-primary"
+                ng-disabled="!timeEntryForm.$valid" ng-click="save(); timeEntryForm.$setPristine();">
           <i class="fa fa-save"></i>
           Save
         </button>
-        <button type="submit" class="pure-button pure-button-error" ng-click="delete()" ng-if="timeEntry.id">
+        <button type="submit" class="pure-button pure-button-error" ng-click="delete(); timeEntryForm.$setPristine();" ng-if="timeEntry.id">
           <i class="fa fa-trash"></i>
           Delete
         </button>
